@@ -30,7 +30,7 @@ public class Pantalla4v extends AppCompatActivity {
 
         datopeso=Double.parseDouble(edtPeso.getText().toString());
         datoaltura=Double.parseDouble(edtAltura.getText().toString());
-        resultado=((datopeso/datoaltura*datoaltura));
+        resultado=(datopeso/(datoaltura*datoaltura));
         if (resultado< 10.5 ) {
            Mensaje="Críticamente Bajo de Peso";
         } else if (resultado> 10.5 && resultado< 18.5) {
