@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/buscarNom"
+        android:icon="@drawable/buscar_nombre"
+        android:title="Buscar por nombre"
+        app:showAsAction="ifRoom"
+        />
+
+    <item android:id="@+id/buscarApelli"
+        android:icon="@drawable/buscar_apellido"
+        android:title="Buscar por apellido"
+        app:showAsAction="ifRoom"
+        />
+
+    <item android:id="@+id/buscarTele"
+        android:icon="@drawable/buscar_telefono"
+        android:title="Buscar por telefono"
+        app:showAsAction="ifRoom"
+        />
+    <item android:id="@+id/buscarCorre"
+        android:icon="@drawable/buscar_correo"
+        android:title="Buscar por correo"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>
