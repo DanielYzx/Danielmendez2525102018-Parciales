@@ -9,7 +9,10 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import utec.edu.sv.parcial3_danielmendez.R;
 
@@ -25,6 +28,8 @@ public class AgreFragment extends Fragment {
 
 
     }
+
+
 
     /*return inflater.inflate(R.layout.fragmento_agregar,container,false);*/
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/clientei"
+            android:icon="@drawable/cliente_icon"
+            android:title="Clientes" />
+        <item android:id="@+id/vehiculoi"
+            android:icon="@drawable/vehiculo_icon"
+            android:title="Vehiculos" />
+
+        <item android:id="@+id/otrosi"
+            android:icon="@drawable/otros_icon"
+            android:title="Vehiculo por clientes" />
+
+
+    </group>
+
+
+
+</menu>
