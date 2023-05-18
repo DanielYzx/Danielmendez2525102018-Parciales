@@ -1,64 +1,68 @@
 package utec.edu.sv.parcial4_danielmendez;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ClienteFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ClienteFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    EditText txtCodCliente,txtNomCliente,txtAplellidoCliente,txtCiudadCliente;
+    TextView tvMensajes;
+    Button btnGuardar;
+    Context context;
     public ClienteFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ClienteFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ClienteFragment newInstance(String param1, String param2) {
-        ClienteFragment fragment = new ClienteFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        AppCompatActivity appCompatActivity =new AppCompatActivity();
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        inflater.inflate(R.layout.fragment_cliente, container, false);
+
+        View view=inflater.inflate(R.layout.fragment_cliente, container, false);
+        txtCodCliente=view.findViewById(R.id.edtID_Cliente);
+        txtNomCliente=view.findViewById(R.id.edtNombreCliente);
+        txtAplellidoCliente=view.findViewById(R.id.edtApellidoCliente);
+        txtCiudadCliente=view.findViewById(R.id.edtCiudadCliente);
+        btnGuardar=view.findViewById(R.id.btnGuardar);
+        tvMensajes=view.findViewById(R.id.tvMensaje);
+
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Clientes baseVehi = new Clientes(context);
+
+                long codiSave=baseProv.insertProvedor(txtNomProv.getText().toString(),txtTelProv.getText().toString(),txtCorrProv.getText().toString());
+                if(codiSave>0){
+                    tvMensajes.append("Registro insertado");
+                }
+                else{
+                    tvMensajes.append("Error en insertar");
+                }
+            }
+        });
+
+        txtNomProv.setText("Prueba");
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cliente, container, false);
+        return view;
     }
 }
